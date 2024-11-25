@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %></title>
+</head>
+<body>
+    <header>
+        <h1>Techmart.pk</h1>
+    </header>
+    <main>
+        <h2><%= product.name %></h2>
+        <img src="<%= product.image %>" alt="<%= product.name %>">
+        <p>Price: PKR <%= product.price %></p>
+        <p><%= product.description %></p>
+        <form action="/buy" method="POST">
+            <input type="hidden" name="productId" value="<%= product._id %>">
+            <label>Name: <input type="text" name="name" required></label>
+            <label>Phone: <input type="text" name="phone" required></label>
+            <label>Address: <input type="text" name="address" required></label>
+            <button type="submit">Buy Now</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techmart.pk</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Techmart.pk</h1>
+        <input type="text" placeholder="Search for products">
+    </header>
+    <main>
+        <h2>Famous Products</h2>
+        <div class="product-grid">
+            <% products.forEach(product => { %>
+            <div class="product-card">
+                <img src="<%= product.image %>" alt="<%= product.name %>">
+                <h3><%= product.name %></h3>
+                <p>PKR <%= product.price %></p>
+                <a href="/product/<%= product._id %>">Buy Now</a>
+            </div>
+            <% }); %>
+        </div>
+    </main>
+</body>
+</html>
